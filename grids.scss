@@ -1,0 +1,243 @@
+/**
+ * Define our grid variables
+ * These can be changed to match our website, ideally these variables
+ * should be changed in the local variable sass file
+ * 
+ * @todo: Move these variables into a _variables.scss to they can be inherited
+ */
+$responsive: true !default;
+
+$breakpoints: (
+    'mobile'   : '(max-width: 480px)',
+    'tablet'   : '(max-width: 769px)',
+    'portable' : '(max-width: 1039px)',
+    'desktop'  : '(min-width: 1040px)'
+);
+
+$grid-breakpoint-prefixes: (
+    'l': 'desktop',
+    'm': 'tablet',
+    'p': 'portable',
+    's': 'mobile'
+) !default;
+
+$default-grid-gutter: 20 !default;
+$grid-gutters: 5 10 15 20 25 30 35 40 45 50;
+
+
+/**
+ * Start our grid styling
+ * None of this should be changed, if changes need to be made, edit the
+ * variables above
+ */
+.grid {
+    display: block;
+    position: relative;
+    margin-right: -#{$default-grid-gutter}px;
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    &--flush {
+        margin-bottom: -#{$default-grid-gutter}px;
+    }
+    &__item {
+        float: left;
+        margin: 0 0 #{$default-grid-gutter}px 0;
+        padding: 0 #{$default-grid-gutter}px 0 0;
+        box-sizing: border-box;
+    }
+    &--reverse > .grid__item {
+        float: right;
+    }
+    &--tight {
+        margin-right: 0;
+        > .grid__item {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    & > .grid__item--reverse {
+        float: right;
+    }
+    &--flex {
+        display: flex;
+        justify-content: center;
+        &:after {
+            content: none;
+        }
+        $flex-justify: ('flex-start', 'flex-end', 'center', 'space-between', 'space-around');
+        @each $justify in $flex-justify {
+            &--#{$justify} {
+                justify-content: #{$justify};
+            }
+        }
+        & > .grid__item {
+            width: initial;
+            align-self: center;
+        }
+    }
+    &--gutter {
+        @each $gutter in $grid-gutters {
+            &-#{$gutter}.grid {
+                margin-right: -#{$gutter}px;
+                &--flush {
+                    margin-bottom: -#{$gutter}px;
+                }
+                .grid__item {
+                    margin: 0 0 #{$gutter}px 0;
+                    padding: 0 #{$gutter}px 0 0;
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * Grid media query (selects the media query for each grid type)
+ * @type {String}
+ */
+@mixin grid-media-query($media-query) {
+    $breakpoint-found: false;
+
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration {
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration} {
+                @content;
+            }
+        }
+    }
+
+    @if not $breakpoint-found {
+        @warn "Breakpoint ‘#{$media-query}’ does not exist";
+    }
+}
+
+
+/*
+ * Start our percentage width mixin
+ * @type {String}
+ */
+@mixin device-type($prefix: "") {
+    .#{$prefix}full,
+    .#{$prefix}three-thirds,
+    .#{$prefix}four-quarters,
+    .#{$prefix}four-fourths,
+    .#{$prefix}five-fifths,
+    .#{$prefix}six-sixths,
+    .#{$prefix}ten-tenths {
+        width: 100%;
+    }
+    .#{$prefix}nine-tenths {
+        width: 90%;
+    }
+    .#{$prefix}five-sixths {
+        width: 83.33333%;
+    }
+    .#{$prefix}four-fifths,
+    .#{$prefix}eight-tenths {
+        width: 80%;
+    }
+    .#{$prefix}three-fourths,
+    .#{$prefix}three-quarters {
+        width: 75%;
+    }
+    .#{$prefix}seven-tenths {
+        width: 70%;
+    }
+    .#{$prefix}two-thirds,
+    .#{$prefix}four-sixths {
+        width: 66.66667%;
+    }
+    .#{$prefix}three-fifths,
+    .#{$prefix}six-tenths {
+        width: 60%;
+    }
+    .#{$prefix}one-half,
+    .#{$prefix}two-quarters,
+    .#{$prefix}two-fourths,
+    .#{$prefix}three-sixths,
+    .#{$prefix}five-tenths {
+        width: 50%;
+    }
+    .#{$prefix}five-twelfths {
+        width: 41.66667%;
+    }
+    .#{$prefix}two-fifths,
+    .#{$prefix}four-tenths {
+        width: 40%;
+    }
+    .#{$prefix}one-third,
+    .#{$prefix}two-sixths {
+        width: 33.33333%;
+    }
+    .#{$prefix}three-tenths {
+        width: 30%;
+    }
+    .#{$prefix}one-fourth,
+    .#{$prefix}one-quarter {
+        width: 25%;
+    }
+    .#{$prefix}one-fifth,
+    .#{$prefix}two-tenths {
+        width: 20%;
+    }
+    .#{$prefix}one-sixth {
+        width: 16.66667%;
+    }
+    .#{$prefix}one-tenth {
+        width: 10%;
+    }
+    .#{$prefix}hidden {
+        display: none;
+    }
+}
+
+
+/*
+ * Add our clear fixes
+ * @type {String}
+ */
+@mixin clear-fixes($prefix: "") {
+    .#{$prefix}clearfix {
+        .#{$prefix}one-half:nth-child(2n+1),
+        .#{$prefix}one-third:nth-child(3n+1),
+        .#{$prefix}one-fourth:nth-child(4n+1),
+        .#{$prefix}one-quarter:nth-child(4n+1),
+        .#{$prefix}one-fifth:nth-child(5n+1),
+        .#{$prefix}one-sixth:nth-child(6n+1),
+        .#{$prefix}one-tenth:nth-child(10n+1) {
+            clear: both;
+            content: "";
+            display: table;
+        }
+    }
+}
+
+/**
+ * Include regular, non-responsive classes.
+ */
+@include device-type;
+@include clear-fixes;
+
+
+/**
+ * If we have defined our website to be responsive, include the media queries
+ */
+@if $responsive {
+    @each $prefixes in $grid-breakpoint-prefixes {
+        $prefix: nth($prefixes, 1);
+        $media-query: nth($prefixes, 2);
+        @include grid-media-query($media-query) {
+           @include device-type('#{$prefix}-');
+           @include clear-fixes('#{$prefix}-');
+        }
+    }
+}
