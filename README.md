@@ -10,12 +10,12 @@ Optional classes include:
 <pre>.grid--flush</pre>
 <pre>.{$size}-clearfix</pre>
 
-Sizes (variable example above being <code>$size</code>) are made up of three media queries with the prefixes:
+Sizes (variable example above being <code>$size</code>) are made up of three media queries with the prefixes:<br />
 <code>l</code>: Large<br />
 <code>m</code>: Medium<br />
 <code>s</code>: Small
 
-Gutter sizes (variable example above being <code>$gutter</code>) are available as follows:
+Gutter sizes (variable example above being <code>$gutter</code>) are available as follows:<br />
 <code>5</code>, 
 <code>10</code>, 
 <code>15</code>, 
