@@ -29,6 +29,14 @@ Gutter sizes (variable example above being <code>$gutter</code>) are available a
 
 With the default gutter being <code>20px</code>
 
+# Setup
+No setup needed. All the hard work is already done.
+
+# Usage
+Simple include the grids.css or _grids.scss file in your head tag or Sass project and you can start using the grid system in your HTML instantly.
+
+The idea of this simple grid system is so you can apply it (and of course, edit it) to meet your needs. It's built to be extremely simple so you can understand how it works and change anything necessary to your requirements.
+
 # Example
 <pre>
 &lt;div class="grid"&gt;
