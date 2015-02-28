@@ -3,10 +3,10 @@ Inspired by Harry Roberts' grids: https://github.com/csswizardry/csswizardry-gri
 
 # Example
 <pre>
-    <div class="grid">
-        <div class="grid__item one-quarter l-one-quarter m-one-half s-full"></div>
-        <div class="grid__item one-quarter l-one-quarter m-one-half s-full"></div>
-        <div class="grid__item one-quarter l-one-quarter m-one-half s-full"></div>
-        <div class="grid__item one-quarter l-one-quarter m-one-half s-full"></div>
-    </div>
+&lt;div class="grid"&gt;
+    &lt;div class="grid__item one-quarter l-one-quarter m-one-half s-full"&gt;&lt;/div&gt;
+    &lt;div class="grid__item one-quarter l-one-quarter m-one-half s-full"&gt;&lt;/div&gt;
+    &lt;div class="grid__item one-quarter l-one-quarter m-one-half s-full"&gt;&lt;/div&gt;
+    &lt;div class="grid__item one-quarter l-one-quarter m-one-half s-full"&gt;&lt;/div&gt;
+&lt;/div&gt;
 </pre>
