@@ -4,30 +4,30 @@ Inspired by Harry Roberts' grids: https://github.com/csswizardry/csswizardry-gri
 This CSS grid will give you the flexabilty to work with BEM syntax and achieve your required grid system.
 
 Optional classes include:
-<code>.grid--gutter-{$gutter}</code>
-<code>.grid--flex</code>
-<code>.grid--tight</code>
-<code>.grid--flush</code>
-<code>.{$size}-clearfix</code>
+<pre>.grid--gutter-{$gutter}</pre>
+<pre>.grid--flex</pre>
+<pre>.grid--tight</pre>
+<pre>.grid--flush</pre>
+<pre>.{$size}-clearfix</pre>
 
-Sizes are made up of three media queries with the prefixes:
-l: Large
-m: Medium
-s: Small
+Sizes (variable example above being <code>$size</code>) are made up of three media queries with the prefixes:
+<code>l</code>: Large<br />
+<code>m</code>: Medium<br />
+<code>s</code>: Small
 
-Gutter sizes are available as follows:
-5
-10
-15
-20
-25
-30
-35
-40
-45
-50
+Gutter sizes (variable example above being <code>$gutter</code>) are available as follows:
+<code>5</code>, 
+<code>10</code>, 
+<code>15</code>, 
+<code>20</code>, 
+<code>25</code>, 
+<code>30</code>, 
+<code>35</code>, 
+<code>40</code>, 
+<code>45</code>, 
+<code>50</code>
 
-With the default gutter being 20px
+With the default gutter being <code>20px</code>
 
 # Example
 <pre>
