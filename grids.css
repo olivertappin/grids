@@ -14,11 +14,23 @@
     vertical-align: top;
     width: 100%;
 }
-.grid--flush {
+.grid--tight {
     margin-left: 0;
 }
-.grid--flush > .grid__item {
+.grid--tight > .grid__item {
     padding-left: 0;
+}
+.grid--gutter-40 {
+    margin-left: -40px;
+}
+.grid--gutter-40 > .grid__item {
+    padding-left: 40px;
+}
+.grid--gutter-60 {
+    margin-left: -40px;
+}
+.grid--gutter-60 > .grid__item {
+    padding-left: 40px;
 }
 .grid--middle > .grid__item {
     vertical-align: middle;
