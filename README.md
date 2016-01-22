@@ -31,9 +31,9 @@ The idea of this simple grid system is so you can apply it (and of course, edit 
 # Example
 <pre>
 &lt;div class="grid"&gt;
-    &lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;
-    &lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;
-    &lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;
-    &lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;
+    &lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;&lt;!--
+    --&gt;&lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;&lt;!--
+    --&gt;&lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;&lt;!--
+    --&gt;&lt;div class="grid__item w-1/4 w-1/2-m w-1/1-s"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre>
