@@ -28,6 +28,8 @@ Simply include the grids.css or _grids.scss file in your head tag or Sass projec
 
 The idea of this simple grid system is so you can apply it (and of course, edit it) to meet your needs. It's built to be extremely simple so you can understand how it works and change anything necessary to your requirements.
 
+Please note, this grid does not use float properties - to make the grid system more reliable around your content without hacky clearfixes and enables us to easily manage vertical alignment. Simply add HTML comments between each <code>.grid__item</code> to remove the whitespace that causes the grid to break.
+
 # Example
 <pre>
 &lt;div class="grid"&gt;
